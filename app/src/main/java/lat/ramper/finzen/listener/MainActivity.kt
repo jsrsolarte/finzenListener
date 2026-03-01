@@ -100,9 +100,8 @@ fun MainScreen() {
     var updateInfo by remember { mutableStateOf<UpdateInfo?>(null) }
 
     LaunchedEffect(Unit) {
-        // REEMPLAZAR con tus datos de GitHub
-        val GITHUB_USER = "TU_USUARIO"
-        val GITHUB_REPO = "TU_REPOSITORIO"
+        val GITHUB_USER = "jsrsolarte"
+        val GITHUB_REPO = "finzenListener"
         checkUpdates(GITHUB_USER, GITHUB_REPO) { info ->
             updateInfo = info
         }

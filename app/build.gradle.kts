@@ -43,6 +43,15 @@ android {
         compose = true
         buildConfig = true
     }
+
+    // Configuración para renombrar el APK automáticamente (API compatible)
+    applicationVariants.all {
+        val variant = this
+        variant.outputs.all {
+            val output = this as com.android.build.gradle.internal.api.ApkVariantOutputImpl
+            output.outputFileName = "finzenListener-v${variant.versionName}.apk"
+        }
+    }
 }
 
 dependencies {
